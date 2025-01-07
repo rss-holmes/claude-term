@@ -8,14 +8,32 @@ A terminal-based tool for interacting with Claude AI, featuring project-based co
 - File context support for projects
 - Rich terminal interface
 
+## Prerequisites
+- Python 3.8 or higher
+- [uv](https://github.com/astral-sh/uv) - Fast Python package installer and resolver
+
 ## Installation
 
-1. Clone this repository
-2. Install dependencies:
+1. Clone this repository:
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/yourusername/claude-term.git
+cd claude-term
 ```
-3. Create a `.env` file with your Anthropic API key:
+
+2. Create and activate a virtual environment using uv:
+```bash
+uv venv
+source .venv/bin/activate  # On Unix/macOS
+# or
+.venv\Scripts\activate  # On Windows
+```
+
+3. Install dependencies:
+```bash
+uv pip install -r requirements.txt
+```
+
+4. Create a `.env` file with your Anthropic API key:
 ```bash
 ANTHROPIC_API_KEY=your_api_key_here
 ```
@@ -35,4 +53,11 @@ python main.py
 
 ### Chat Commands
 - Start chat (no project): `python main.py chat`
-- Start chat with project: `python main.py chat --project <name>` 
+- Start chat with project: `python main.py project chat <name>`
+
+## Development
+
+The project uses uv for dependency management. To update dependencies:
+```bash
+uv pip compile pyproject.toml -o requirements.txt
+``` 
