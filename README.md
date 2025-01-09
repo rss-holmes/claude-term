@@ -46,14 +46,14 @@ python main.py
 ```
 
 ### Project Commands
-- Create a new project: `python main.py project create <name>`
-- List projects: `python main.py project list`
-- Add files to project: `python main.py project add-file <project> <file>`
-- Set system prompt: `python main.py project set-prompt <project> <prompt_file>`
+- Create a new project: `python main.py project create --project-name=<project_name>` or `python main.py project create <project_name>`
+- List projects: `python main.py list-projects`
+- Add files to project: `python main.py project add-file --project-name=<project_name> --file-path=<file_path>` or `python main.py project add-file <project_name> <file_path>`
+- Set system prompt: `python main.py set-prompt --project-name=<project_name> --prompt-file=<prompt_file>` or `python main.py set-prompt <project_name> <prompt_file>`
 
 ### Chat Commands
 - Start chat (no project): `python main.py chat`
-- Start chat with project: `python main.py project chat <name>`
+- Start chat with project: `python main.py chat --project-name=<project_name>`
 
 ## Development
 
